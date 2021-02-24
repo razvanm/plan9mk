@@ -1,0 +1,50 @@
+load("@rules_cc//cc:defs.bzl", "cc_binary")
+
+cc_binary(
+	name = "mk",
+	srcs = [
+		"arc.c",
+		"archive.c",
+		"bufblock.c",
+		"env.c",
+		"file.c",
+		"graph.c",
+		"job.c",
+		"lex.c",
+		"main.c",
+		"match.c",
+		"mk.c",
+		"parse.c",
+		"recipe.c",
+		"rc.c",
+		"rule.c",
+		"run.c",
+		"sh.c",
+		"shell.c",
+		"shprint.c",
+		"symtab.c",
+		"var.c",
+		"varsub.c",
+		"word.c",
+		"unix.c",
+
+		"fns.h",
+		"mk.h",
+		"sys.h",
+	],
+	copts = [
+		"-Ilibutf",
+		"-Ilibfmt",
+		"-Ilibbio",
+		"-Ilibregexp",
+
+		"-Wno-missing-braces",
+		"-Wno-parentheses",
+	],
+	deps = [
+		"//libutf",
+		"//libfmt",
+		"//libbio",
+		"//libregexp",
+	],
+)
